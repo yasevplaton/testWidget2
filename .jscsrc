@@ -1,0 +1,85 @@
+{
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch"
+  ],
+  "requireSpaceAfterKeywords": [
+    "do",
+    "for",
+    "if",
+    "else",
+    "switch",
+    "case",
+    "try",
+    "void",
+    "while",
+    "with",
+    "return",
+    "typeof"
+  ],
+  "validateLineBreaks": "LF",
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  },
+  "disallowNewlineBeforeBlockStatements": true,
+  "disallowSpacesInCallExpression": true,
+  "requireSpaceBeforeBinaryOperators": [
+    "+",
+    "-",
+    "/",
+    "*",
+    "=",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "requireSpaceAfterBinaryOperators": [
+    "+",
+    "-",
+    "/",
+    "*",
+    "=",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "disallowSpaceAfterPrefixUnaryOperators": [
+    "++",
+    "--",
+    "+",
+    "-"
+  ],
+  "disallowSpaceBeforePostfixUnaryOperators": [
+    "++",
+    "--"
+  ],
+  "disallowKeywords": [
+    "with"
+  ],
+  "disallowKeywordsOnNewLine": [
+    "else"
+  ],
+  "disallowSpaceAfterObjectKeys": true,
+  "disallowMultipleLineStrings": true,
+  "disallowMixedSpacesAndTabs": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "validateParameterSeparator": ", ",
+  "requireSpacesInConditionalExpression": {
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": true,
+    "beforeAlternate": true
+  },
+  "requireSpaceBeforeObjectValues": true,
+  "maxErrors": 500
+}
