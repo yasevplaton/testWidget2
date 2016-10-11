@@ -5,6 +5,7 @@ class VideoModel extends EventEmitter {
 	constructor() {
 		super();
 		this.videos = VideoModel.store('videos');
+		// Save model on every change
 		this.on('change', () => {
 			VideoModel.store('videos', this.videos);
 		});
@@ -30,6 +31,10 @@ class VideoModel extends EventEmitter {
 		}
 	}
 
+	/**
+	 * Add new video to model
+	 * @param url
+	 */
 	add(url) {
 		this.videos.push({
 			url: url
@@ -38,6 +43,10 @@ class VideoModel extends EventEmitter {
 		this.emit('change');
 	}
 
+	/**
+	 * Remove existing video from model
+	 * @param video
+	 */
 	remove(video) {
 		this.videos = this.videos.filter(v => v !== video);
 		this.emit('change');

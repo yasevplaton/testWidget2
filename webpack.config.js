@@ -19,8 +19,20 @@ const config = {
 			test: /\.js$/
 			, include: path
 			, loader: 'babel'
+		}, {
+			test: /\.css$/
+			, loader: 'style!css'
 		}]
 	}
+	, plugins: [
+		/*
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				warnings: false
+			}
+		})
+		*/
+	]
 };
 
 module.exports = config;

@@ -8,8 +8,9 @@ class Video extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="video">
 				<img src="https://i.vimeocdn.com/portrait/1274237_300x300" />
+				<span>{this.props.url}</span>
 			</div>
 		);
 	}

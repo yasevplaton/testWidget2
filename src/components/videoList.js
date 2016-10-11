@@ -8,15 +8,16 @@ class VideoList extends React.Component {
 		console.log('List of videos to use: ' + props.videos.map((v, i) => `${i + 1}). ${v}`).join(', '));
 	}
 
-	getRandomUrl() {
-		return 'http://non-random-url';
+	/**
+	 * Return random video url from the list
+	 * @return {string}
+	 */
+	getRandomVideo() {
+		return 'non-random-video';
 	}
 
-	/**
-	 * Add random video from the list
-	 */
 	add() {
-		this.props.model.add(this.getRandomUrl());
+		this.props.model.add(this.getRandomVideo());
 	}
 
 	remove(video) {
@@ -26,10 +27,10 @@ class VideoList extends React.Component {
 	render() {
 		const list = this.props.model.videos.map(video => {
 			return (
-				<span key={video.id}>
+				<div key={video.id}>
 					{video.url}
 					<button onClick={this.remove.bind(this, video)}>x</button>
-				</span>
+				</div>
 			);
 		}, this);
 		const videos = this.props.model.videos.map(video => {
@@ -43,13 +44,13 @@ class VideoList extends React.Component {
 		return (
 			<div>
 				<div>
+					<button onClick={this.add.bind(this)}>+</button>
+				</div>
+				<div className="videoList">
 					{list}
 				</div>
-				<div>
+				<div className="videos">
 					{videos}
-				</div>
-				<div>
-					<button onClick={this.add.bind(this)}>+</button>
 				</div>
 			</div>
 		);
