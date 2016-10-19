@@ -33,11 +33,12 @@ class VideoModel extends EventEmitter {
 
 	/**
 	 * Add new video to model
-	 * @param url
+	 * @param videoId
 	 */
-	add(url) {
+	add(videoId) {
 		this.videos.push({
-			url: url
+			url: `http://www.youtube.com/embed/${videoId}?autoplay=1`
+			, videoId: videoId
 			, id: uuid.v4()
 		});
 		this.emit('change');

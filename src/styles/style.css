@@ -28,3 +28,7 @@
     transform: rotate(-45deg);
     color: orange;
 }
+
+.addButton {
+    margin: 10px;
+}

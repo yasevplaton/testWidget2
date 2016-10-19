@@ -9,8 +9,8 @@ class Video extends React.Component {
 	render() {
 		return (
 			<div className="video">
-				<img src="https://i.vimeocdn.com/portrait/1274237_300x300" />
-				<span>{this.props.url}</span>
+				<iframe width="auto" height="auto" src={this.props.url} frameBorder="0" allowFullScreen></iframe>
+				<span>{this.props.id}</span>
 			</div>
 		);
 	}
