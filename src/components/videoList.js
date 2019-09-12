@@ -1,5 +1,7 @@
 import React from 'react';
 import Video from './video';
+import "../styles/btn.css";
+import "../styles/videoList.css";
 
 class VideoList extends React.Component {
 
@@ -13,12 +15,17 @@ class VideoList extends React.Component {
 	 * @param {Array<string>} videos
 	 * @return {string}
 	 */
+
 	static getRandomVideo(videos) {
 		return /v=([\S]+)/.exec(videos[Math.floor(Math.random() * (videos.length + 1))])[1];
 	}
 
 	add() {
-		this.props.model.add(VideoList.getRandomVideo(this.props.videos));
+		if (this.props.videos.length) {
+			this.props.model.add(VideoList.getRandomVideo(this.props.videos));
+		} else {
+			alert("Сначала найдите что-нибудь на YouTube");
+		}
 	}
 
 	remove(video) {
@@ -26,14 +33,16 @@ class VideoList extends React.Component {
 	}
 
 	render() {
+
 		const list = this.props.model.videos.map(video => {
 			return (
-				<div key={video.id}>
+				<div key={video.id} className="videoList__desc">
 					{video.url}
-					<button onClick={this.remove.bind(this, video)}>x</button>
+					<button className="btn btn--remove" onClick={this.remove.bind(this, video)}>x</button>
 				</div>
 			);
 		}, this);
+
 		const videos = this.props.model.videos.map(video => {
 			return (
 				<Video
@@ -43,10 +52,11 @@ class VideoList extends React.Component {
 				/>
 			);
 		}, this);
+
 		return (
-			<div>
-				<div className="addButton">
-					<button onClick={this.add.bind(this)}>+</button>
+			<div className="videoList__wrapper">
+				<div className="btn--add__wrapper">
+					<button className="btn btn--add" onClick={this.add.bind(this)}>+</button>
 				</div>
 				<div className="videoList">
 					{list}

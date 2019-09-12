@@ -1,0 +1,25 @@
+.btn {
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn--add {
+  background: rgba(189, 189, 189, 0.5);
+}
+
+.btn--add__wrapper {
+  margin-bottom: 10px;
+}
+
+.btn--add:hover {
+  background: rgba(189, 189, 189, 1);
+}
+
+.btn--remove {
+  background: none;
+  color: red;
+}

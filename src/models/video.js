@@ -17,6 +17,7 @@ class VideoModel extends EventEmitter {
 	 * @param {object} [value]
 	 * @returns {Array<object>|*}
 	 */
+
 	static store(key, value) {
 		if (value) {
 			return localStorage.setItem(key, JSON.stringify(value));
@@ -27,6 +28,7 @@ class VideoModel extends EventEmitter {
 			} catch(e) {
 				value = [];
 			}
+
 			return value || [];
 		}
 	}
@@ -35,6 +37,7 @@ class VideoModel extends EventEmitter {
 	 * Add new video to model
 	 * @param videoId
 	 */
+
 	add(videoId) {
 		this.videos.push({
 			url: `http://www.youtube.com/embed/${videoId}?autoplay=1`
