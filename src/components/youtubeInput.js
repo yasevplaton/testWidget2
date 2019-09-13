@@ -12,6 +12,7 @@ export default class Input extends React.Component {
 
   [handleKeyPress](event) {
     if (event.key === "Enter" && this.state.value !== "") {
+      console.log(`Найдем что-нибудь по запросу ${this.state.value}`)
       this.props.handleInput(this.state.value);
     } else if (event.key === "Enter") {
       alert("Введите что-нибудь в поисковой строке!");

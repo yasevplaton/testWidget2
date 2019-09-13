@@ -55,7 +55,8 @@ class VideoList extends React.Component {
 
 		return (
 			<div className="videoList__wrapper">
-				<div className="btn--add__wrapper">
+				<div className="btn__wrapper--add">
+					<span className="btn__label--add">Далее нажмите на кнопку для добавления видео</span>
 					<button className="btn btn--add" onClick={this.add.bind(this)}>+</button>
 				</div>
 				<div className="videoList">

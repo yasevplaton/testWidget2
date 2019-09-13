@@ -37,7 +37,9 @@ class App extends React.Component {
 				
 				this.setState({
 					videos: videos
-				})
+        })
+        
+        console.log(videos);
 
 			})
 			.catch(err => {
@@ -51,7 +53,7 @@ class App extends React.Component {
         <div className="content">
           <h3 className="heading">Test task</h3>
           <Input handleInput={this.handleSearch.bind(this)}/>
-          <VideoList model={model} videos={videos}/>
+          <VideoList model={model} videos={this.state.videos}/>
         </div>
       </div>
     );
